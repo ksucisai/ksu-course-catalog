@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>崑山科技大學 課程科目表索引</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Microsoft JhengHei", "PingFang TC", sans-serif; background: #f0f4f8; color: #333; }
+    header { background: #1a3a5c; color: #fff; padding: 2rem; text-align: center; }
+    header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    header p { font-size: 0.95rem; opacity: 0.85; }
+    .stats { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; flex-wrap: wrap; }
+    .stat { background: rgba(255,255,255,0.15); padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.9rem; }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .college { background: #fff; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .college h2 { color: #1a3a5c; font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid #e8a020; }
+    .dept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
+    .dept { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.85rem 1rem; }
+    .dept a { color: #1a3a5c; text-decoration: none; font-weight: 600; font-size: 0.95rem; display: block; }
+    .dept a:hover { color: #e8a020; }
+    .dept span { font-size: 0.8rem; color: #888; margin-left: 0.5rem; }
+    .search-box { text-align: center; margin-bottom: 2rem; }
+    .search-box input { width: 100%; max-width: 500px; padding: 0.8rem 1.2rem; border: 2px solid #ddd; border-radius: 2rem; font-size: 1rem; outline: none; transition: border 0.3s; }
+    .search-box input:focus { border-color: #e8a020; }
+    footer { text-align: center; padding: 2rem; color: #888; font-size: 0.85rem; }
+    footer a { color: #1a3a5c; }
+    @media (max-width: 600px) { header h1 { font-size: 1.4rem; } .dept-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎓 崑山科技大學 課程科目表</h1>
+  <p>快速索引 · 一鍵查找各系所學年度課程科目表 PDF</p>
+  <div class="stats">
+    <div class="stat">📚 22 系所</div>
+    <div class="stat">📄 684 個檔案</div>
+    <div class="stat">🏛️ 3 個學院</div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 搜尋系所名稱..." onkeyup="filterDepts()">
+  </div>
+
+  <!-- 工程學院 -->
+  <div class="college" data-college="工程學院">
+    <h2>🏗️ 工程學院</h2>
+    <div class="dept-grid">
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E5%85%88%E9%80%B2%E6%87%89%E7%94%A8%E6%9D%90%E6%96%99%E5%B7%A5%E7%A8%8B%E7%B3%BB">先進應用材料工程系</a><span>17 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E6%99%BA%E6%85%A7%E5%99%A8%E5%99%A8%E5%B7%A5%E7%A8%8B%E7%B3%BB">智慧機器人工程系</a><span>46 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E6%A9%9F%E6%A2%B0%E5%B7%A5%E7%A8%8B%E7%B3%BB">機械工程系</a><span>76 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E7%92%B0%E5%A2%83%E5%B7%A5%E7%A8%8B%E7%B3%BB">環境工程系</a><span>45 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%B3%BB">資訊工程系</a><span>44 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E9%9B%BB%E5%8B%95%E8%BD%8A%E6%9A%A8%E6%99%BA%E6%85%A7%E9%9B%BB%E5%AD%90%E5%B7%A5%E7%A8%8B%E7%B3%BB">電動車暨智慧電子工程系</a><span>32 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E9%9B%BB%E6%A9%9F%E5%B7%A5%E7%A8%8B%E7%B3%BB">電機工程系</a><span>42 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2/%E9%9B%BB%E8%85%A6%E8%88%87%E9%81%8A%E6%88%B2%E7%99%BC%E5%B1%95%E7%A7%91%E5%AD%B8%E5%AD%B8%E4%BD%8D%E5%AD%B8%E7%A8%8B">電腦與遊戲發展科學學士學位學程</a><span>10 檔案</span></div>
+    </div>
+  </div>
+
+  <!-- 智慧生活管理學院 -->
+  <div class="college" data-college="智慧生活管理學院">
+    <h2>🏠 智慧生活管理學院</h2>
+    <div class="dept-grid">
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E4%BC%81%E6%A5%AD%E7%AE%A1%E7%90%86%E7%B3%BB">企業管理系</a><span>33 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E4%BC%91%E9%96%92%E9%81%8A%E6%88%8F%E8%88%87%E9%81%8B%E5%8B%95%E7%AE%A1%E7%90%86%E7%B3%BB">休閒遊憩與運動管理系</a><span>13 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E5%B9%BC%E5%85%90%E4%BF%9D%E8%82%B2%E7%B3%BB">幼兒保育系</a><span>17 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E6%88%BF%E5%9C%B0%E7%94%A2%E9%96%A2%E7%99%BC%E8%88%87%E7%AE%A1%E7%90%86%E7%B3%BB">房地產開發與管理系</a><span>19 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E6%97%85%E9%81%8A%E4%BA%8B%E6%A5%AD%E7%AE%A1%E7%90%86%E7%B3%BB">旅遊事業管理系</a><span>25 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E6%A8%82%E9%BB%8E%E7%94%9F%E6%B4%BB%20%E5%AD%A6%E7%94%9F%E5%AD%96%E7%A8%8B">樂齡生活產業管理學士學位學程</a><span>15 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E8%B3%87%E8%A8%8A%E7%AE%A1%E7%90%86%E7%B3%BB">資訊管理系</a><span>43 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E9%87%91%E8%9E%8D%E7%AE%A1%E7%90%86%E7%B3%BB">金融管理系</a><span>21 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2/%E9%A4%90%E9%A3%B2%E7%AE%A1%E7%90%86%E5%8F%8A%E5%BB%9A%E8%88%88%E7%B3%BB">餐飲管理及廚藝系</a><span>21 檔案</span></div>
+    </div>
+  </div>
+
+  <!-- 創意媒體學院 -->
+  <div class="college" data-college="創意媒體學院">
+    <h2>🎬 創意媒體學院</h2>
+    <div class="dept-grid">
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%88%9B%E6%84%8F%E5%AA%92%E9%AB%94%E5%AD%A6%E9%99%A2/%E5%85%AC%E5%85%B1%E9%97%9C%E4%BF%82%E8%88%89%E5%BB%A3%E5%91%8A%E7%B3%BB">公共關係暨廣告系</a><span>31 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%88%9B%E6%84%8F%E5%AA%92%E9%AB%94%E5%AD%A6%E9%99%A2/%E7%A9%BA%E9%96%93%E8%A8%AD%E8%A8%88%E7%B3%BB">空間設計系</a><span>24 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%88%9B%E6%84%8F%E5%AA%92%E9%AB%94%E5%AD%A6%E9%99%A2/%E8%A6%96%E8%A8%93%E5%82%99%E9%81%94%E8%A8%AD%E8%A8%88%E7%B3%BB">視覺傳達設計系</a><span>59 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%88%9B%E6%84%8F%E5%AA%92%E9%AB%94%E5%AD%A6%E9%99%A2/%E8%A6%96%E8%A8%93%E5%82%B3%E9%81%94%E8%A8%AD%E8%A8%88%E7%B3%BB">視訊傳播設計系</a><span>30 檔案</span></div>
+      <div class="dept"><a href="https://github.com/ksucisai/ksu-course-catalog/tree/main/%E5%88%9B%E6%84%8F%E5%AA%92%E9%AB%94%E5%AD%A6%E9%99%A2/%E8%B3%87%E8%A8%8A%E5%82%B3%E9%81%94%E7%B3%BB">資訊傳播系</a><span>21 檔案</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>由 AI 整理維護 · <a href="https://github.com/ksucisai/ksu-course-catalog">GitHub Repo</a> · 崑山科技大學課務組</p>
+</footer>
+
+<script>
+function filterDepts() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.dept').forEach(d => {
+    d.style.display = d.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+  document.querySelectorAll('.college').forEach(c => {
+    const visible = [...c.querySelectorAll('.dept')].some(d => d.style.display !== 'none');
+    c.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
